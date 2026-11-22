@@ -3,23 +3,94 @@
 <head>
 <meta charset="utf-8">
 <meta name="author" content="Dmytro Zhdaniuk">
-<title>Zadanie 8 - Projekt tabeli</title>
+<title>Tabela komputerow</title>
 <style>
-body { margin:0; background:#fff; font-family:Arial,sans-serif; }
-.page-title { font-size:24px; font-weight:bold; text-align:center; margin:42px 0 24px; }
-.table-wrap { width:720px; margin:0 auto; border:3px solid #9438ba; }
-table { width:100%; border-collapse:collapse; table-layout:fixed; }
-caption { height:49px; border-bottom:2px solid #9438ba; font-size:24px; font-weight:bold; text-align:center; vertical-align:middle; }
-thead th { height:49px; background:#60306f; color:#fff; border:1px solid #fff; border-top:none; font-size:13px; line-height:16px; text-align:center; vertical-align:middle; }
-tbody td { height:37px; border:1px solid #333; padding:2px 6px; font-size:13px; vertical-align:middle; }
-.cooling { text-align:center; background:#fff; }
-tfoot td { height:30px; background:#60306f; color:#fff; border:1px solid #333; font-size:13px; font-weight:bold; text-align:center; vertical-align:middle; }
+body {
+    margin: 0;
+    background: #fff;
+    font-family: Arial, sans-serif;
+}
+.table-wrap {
+    width: calc(100% - 48px);
+    max-width: 760px;
+    margin: 12px auto 0;
+    border: 3px solid #a51d9d;
+    border-bottom: 20px solid #60306f;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+caption {
+    height: 49px;
+    background: #f2f2f2;
+    border-bottom: 3px solid #a51d9d;
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+thead th {
+    height: 49px;
+    background: #60306f;
+    color: #fff;
+    border: 1px solid #60306f;
+    border-top: 0;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    vertical-align: middle;
+}
+tbody td {
+    height: 37px;
+    border: 1px solid #333;
+    background: #fff;
+    color: #000;
+    padding: 2px 6px;
+    font-size: 13px;
+    line-height: 15px;
+    vertical-align: middle;
+}
+tbody tr:nth-child(odd) td:not(.cooling) {
+    background: #d9ead9;
+}
+tbody tr:nth-child(even) td:not(.cooling) {
+    background: #fbfbf8;
+}
+.cooling {
+    background: #fff5c9;
+    text-align: center;
+}
+.cooling span {
+    text-decoration: underline;
+}
+tfoot td {
+    height: 30px;
+    color: #fff;
+    background: #60306f;
+    border: 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+.back {
+    text-align: center;
+}
 </style>
 </head>
 <body>
 <div class="table-wrap">
 <table>
-<colgroup><col style="width:26%"><col style="width:13%"><col style="width:13%"><col style="width:23%"><col style="width:25%"></colgroup>
+<colgroup>
+<col style="width:26%">
+<col style="width:13%">
+<col style="width:13%">
+<col style="width:23%">
+<col style="width:25%">
+</colgroup>
 <caption>Dane komputerow - Dmytro Zhdaniuk 2Gg2</caption>
 <thead>
 <tr>
@@ -31,7 +102,7 @@ tfoot td { height:30px; background:#60306f; color:#fff; border:1px solid #333; f
 </tr>
 </thead>
 <tbody>
-<tr><td>RTX 4090</td><td>2230 Mhz</td><td>24 GB</td><td>384-bit</td><td rowspan="6" class="cooling">Aktywne</td></tr>
+<tr><td>RTX 4090</td><td>2230 Mhz</td><td>24 GB</td><td>384-bit</td><td rowspan="6" class="cooling"><span>Aktywne</span></td></tr>
 <tr><td>RTX 4080<br>SUPER</td><td>2290 Mhz</td><td>16 GB</td><td>256-bit</td></tr>
 <tr><td>RTX 4080</td><td>2210 Mhz</td><td>16 GB</td><td>256-bit</td></tr>
 <tr><td>RTX 4070 Ti<br>SUPER</td><td>2340 Mhz</td><td>16 GB</td><td>256-bit</td></tr>
@@ -41,6 +112,6 @@ tfoot td { height:30px; background:#60306f; color:#fff; border:1px solid #333; f
 <tfoot><tr><td colspan="5">Dane komputerowe</td></tr></tfoot>
 </table>
 </div>
-<p style="text-align:center;"><a href="index.html">Wróć do strony głównej</a></p>
+<p class="back"><a href="index.html">Wróć do strony głównej</a></p>
 </body>
 </html>
